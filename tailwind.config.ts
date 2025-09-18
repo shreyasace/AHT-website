@@ -47,6 +47,10 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        "aht-orange": {
+          DEFAULT: "hsl(var(--aht-orange))",
+          foreground: "hsl(var(--aht-orange-foreground))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -57,6 +61,10 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      boxShadow: {
+        "card": "0 4px 20px -4px hsl(217 83% 18% / 0.1)",
+        "corporate": "0 10px 40px -10px hsl(217 83% 18% / 0.2)",
       },
       borderRadius: {
         lg: "var(--radius)",
