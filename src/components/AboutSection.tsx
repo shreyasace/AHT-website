@@ -135,25 +135,25 @@ const AboutSection = () => {
           animate={isInView ? "visible" : "hidden"}
         >
           {/* Section header */}
-          <motion.div variants={itemVariants} className="text-center mb-20">
+          <motion.div variants={itemVariants} className="text-center mb-12 md:mb-20 px-4">
             <motion.div 
-              className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 mb-6"
+              className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 mb-4 sm:mb-6"
               whileHover={{ scale: 1.05 }}
             >
-              <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-sm font-semibold text-primary">Deep-Tech Engineering</span>
+              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
+              <span className="text-xs sm:text-sm font-semibold text-primary">Deep-Tech Engineering</span>
             </motion.div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4 sm:mb-6 tracking-tight">
               About <span className="bg-gradient-to-r from-aht-orange to-orange-500 bg-clip-text text-transparent">AHT</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               A deep-tech engineering and research-driven firm specializing in the design, development, 
               and manufacturing of advanced shock tunnel, shock tube, and diaphragm-less shock tube facilities.
             </p>
           </motion.div>
           
           {/* Founders grid */}
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 mb-12 md:mb-20 px-2">
             {founders.map((founder, index) => (
               <motion.div
                 key={founder.name}
@@ -169,17 +169,17 @@ const AboutSection = () => {
                   
                   <div className="relative z-10">
                     {/* Avatar */}
-                    <div className="text-center mb-8">
+                    <div className="text-center mb-6 sm:mb-8">
                       <motion.div 
-                        className={`w-28 h-28 bg-gradient-to-br ${founder.gradient} rounded-2xl mx-auto mb-5 flex items-center justify-center text-white text-3xl font-bold shadow-xl relative overflow-hidden`}
+                        className={`w-20 h-20 sm:w-28 sm:h-28 bg-gradient-to-br ${founder.gradient} rounded-2xl mx-auto mb-4 sm:mb-5 flex items-center justify-center text-white text-2xl sm:text-3xl font-bold shadow-xl relative overflow-hidden`}
                         whileHover={{ scale: 1.05, rotate: 3 }}
                         transition={{ type: "spring", stiffness: 300 }}
                       >
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                         <span className="relative z-10">{founder.initials}</span>
                       </motion.div>
-                      <h3 className="text-2xl font-bold text-primary mb-2">{founder.name}</h3>
-                      <p className="text-aht-orange font-semibold text-lg">{founder.role}</p>
+                      <h3 className="text-xl sm:text-2xl font-bold text-primary mb-1 sm:mb-2">{founder.name}</h3>
+                      <p className="text-aht-orange font-semibold text-base sm:text-lg">{founder.role}</p>
                     </div>
                     
                     {/* Details */}
@@ -225,24 +225,24 @@ const AboutSection = () => {
           </div>
           
           {/* Mission Statement */}
-          <motion.div variants={itemVariants}>
+          <motion.div variants={itemVariants} className="px-2">
             <Card className="card-corporate relative overflow-hidden bg-gradient-to-r from-primary/[0.03] via-transparent to-aht-orange/[0.03] border-primary/10">
               {/* Decorative elements */}
-              <div className="absolute top-4 left-4 text-primary/10">
-                <Quote className="w-16 h-16" />
+              <div className="absolute top-4 left-4 text-primary/10 hidden sm:block">
+                <Quote className="w-12 h-12 sm:w-16 sm:h-16" />
               </div>
-              <div className="absolute bottom-4 right-4 text-primary/10 rotate-180">
-                <Quote className="w-16 h-16" />
+              <div className="absolute bottom-4 right-4 text-primary/10 rotate-180 hidden sm:block">
+                <Quote className="w-12 h-12 sm:w-16 sm:h-16" />
               </div>
               
-              <div className="text-center relative z-10 py-4">
+              <div className="text-center relative z-10 py-2 sm:py-4">
                 <motion.div 
-                  className="inline-flex items-center gap-2 bg-aht-orange/10 border border-aht-orange/30 rounded-full px-4 py-2 mb-6"
+                  className="inline-flex items-center gap-2 bg-aht-orange/10 border border-aht-orange/30 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 mb-4 sm:mb-6"
                   whileHover={{ scale: 1.05 }}
                 >
-                  <span className="text-sm font-semibold text-aht-orange uppercase tracking-wider">Our Mission</span>
+                  <span className="text-xs sm:text-sm font-semibold text-aht-orange uppercase tracking-wider">Our Mission</span>
                 </motion.div>
-                <p className="text-xl md:text-2xl text-foreground leading-relaxed max-w-4xl mx-auto font-medium italic">
+                <p className="text-base sm:text-xl md:text-2xl text-foreground leading-relaxed max-w-4xl mx-auto font-medium italic px-2">
                   "To design and manufacture world-class shock tube and shock tunnel facilities, 
                   enabling interdisciplinary research in aero-thermodynamics, materials chemistry, and astro-sciences 
                   while mentoring future scientists and engineers through hands-on experimentation."

@@ -18,7 +18,7 @@ const RotatingWords = () => {
   }, []);
   
   return (
-    <span className="relative inline-block min-w-[280px] md:min-w-[400px]">
+    <span className="relative inline-block min-w-[180px] sm:min-w-[280px] md:min-w-[400px]">
       <AnimatePresence mode="wait">
         <motion.span
           key={currentIndex}
@@ -226,14 +226,15 @@ const HeroSection = () => {
         </motion.div>
         
         {/* Main headline with stagger animation */}
-        <motion.div className="overflow-hidden">
+        <motion.div className="overflow-hidden px-2">
           <motion.h1 
-            className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight tracking-tight"
+            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight tracking-tight"
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Redefining{" "}
+            Redefining
+            <br className="sm:hidden" />{" "}
             <RotatingWords />
             <br />
             <span className="text-white/90">Innovation</span>
@@ -242,7 +243,7 @@ const HeroSection = () => {
         
         {/* Subtitle with fade in */}
         <motion.p 
-          className="text-lg md:text-xl lg:text-2xl mb-10 max-w-4xl mx-auto leading-relaxed text-white/80 font-light"
+          className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 md:mb-10 max-w-4xl mx-auto leading-relaxed text-white/80 font-light px-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
@@ -278,7 +279,7 @@ const HeroSection = () => {
         
         {/* Stats section with stagger */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto px-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.9 }}
@@ -293,19 +294,23 @@ const HeroSection = () => {
               whileHover={{ scale: 1.03, y: -5 }}
             >
               {/* Card content */}
-              <div className="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-7 hover:border-aht-orange/40 hover:bg-white/[0.12] transition-all duration-300 overflow-hidden">
-                {/* Icon */}
-                <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-aht-orange mb-4 shadow-lg shadow-aht-orange/20">
-                  <stat.icon className="w-6 h-6 text-white" />
+              <div className="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 sm:p-7 hover:border-aht-orange/40 hover:bg-white/[0.12] transition-all duration-300 overflow-hidden">
+                <div className="flex items-center gap-4 sm:block">
+                  {/* Icon */}
+                  <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-aht-orange sm:mb-4 shadow-lg shadow-aht-orange/20 flex-shrink-0">
+                    <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                  </div>
+                  
+                  <div className="flex-1 sm:block">
+                    {/* Value */}
+                    <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">
+                      <AnimatedCounter value={stat.value} duration={2} />
+                    </div>
+                    
+                    {/* Label */}
+                    <div className="text-xs sm:text-sm text-white/70">{stat.label}</div>
+                  </div>
                 </div>
-                
-                {/* Value */}
-                <div className="text-3xl md:text-4xl font-bold text-white mb-2">
-                  <AnimatedCounter value={stat.value} duration={2} />
-                </div>
-                
-                {/* Label */}
-                <div className="text-sm text-white/70">{stat.label}</div>
               </div>
             </motion.div>
           ))}

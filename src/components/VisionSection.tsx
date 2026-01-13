@@ -187,25 +187,25 @@ const VisionSection = () => {
           animate={isInView ? "visible" : "hidden"}
         >
           {/* Section Header */}
-          <motion.div variants={itemVariants} className="text-center mb-20">
+          <motion.div variants={itemVariants} className="text-center mb-12 md:mb-20 px-4">
             <motion.div 
-              className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 mb-6"
+              className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 mb-4 sm:mb-6"
               whileHover={{ scale: 1.05 }}
             >
-              <Eye className="w-4 h-4 text-primary" />
-              <span className="text-sm font-semibold text-primary">Our Vision</span>
+              <Eye className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
+              <span className="text-xs sm:text-sm font-semibold text-primary">Our Vision</span>
             </motion.div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4 sm:mb-6 tracking-tight">
               Vision & <span className="bg-gradient-to-r from-aht-orange to-orange-500 bg-clip-text text-transparent">Capabilities</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               To be a global leader in hypersonic ground-test technologies and shock-based material processing, 
               enabling next-generation aerospace systems through innovation.
             </p>
           </motion.div>
           
           {/* Market Stats Cards */}
-          <div className="grid md:grid-cols-3 gap-6 mb-20">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-12 md:mb-20 px-2">
             {marketData.map((item, index) => (
               <motion.div
                 key={index}
@@ -221,15 +221,15 @@ const VisionSection = () => {
                   
                   {/* Icon */}
                   <motion.div 
-                    className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center text-white shadow-lg mb-6`}
+                    className={`w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-xl sm:rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center text-white shadow-lg mb-4 sm:mb-6`}
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <item.icon className="h-8 w-8" />
+                    <item.icon className="h-6 w-6 sm:h-8 sm:w-8" />
                   </motion.div>
                   
                   {/* Value with animation */}
-                  <div className="text-4xl md:text-5xl font-bold text-primary mb-3">
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-2 sm:mb-3">
                     <AnimatedNumber 
                       value={item.value} 
                       prefix={item.prefix} 
@@ -237,39 +237,39 @@ const VisionSection = () => {
                     />
                   </div>
                   
-                  <div className="text-lg font-semibold text-foreground mb-2">{item.label}</div>
-                  <div className="text-sm text-muted-foreground">{item.description}</div>
+                  <div className="text-base sm:text-lg font-semibold text-foreground mb-1 sm:mb-2">{item.label}</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">{item.description}</div>
                 </Card>
               </motion.div>
             ))}
           </div>
           
           {/* Strategic Vision Grid */}
-          <motion.div variants={itemVariants} className="grid md:grid-cols-2 gap-12 items-stretch mb-16">
+          <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-stretch mb-12 md:mb-16 px-2">
             {/* Left column - Strategic points */}
             <div className="flex flex-col justify-center">
-              <h3 className="text-3xl font-bold text-primary mb-8 flex items-center gap-3">
-                <Sparkles className="w-8 h-8 text-aht-orange" />
+              <h3 className="text-2xl sm:text-3xl font-bold text-primary mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
+                <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 text-aht-orange" />
                 Strategic Global Priority
               </h3>
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {strategicPoints.map((point, index) => (
                   <motion.div 
                     key={index}
-                    className="flex items-start gap-4 p-5 rounded-2xl bg-card hover:bg-muted/50 border border-border/50 hover:border-aht-orange/30 transition-all duration-300 group cursor-pointer"
+                    className="flex items-start gap-3 sm:gap-4 p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-card hover:bg-muted/50 border border-border/50 hover:border-aht-orange/30 transition-all duration-300 group cursor-pointer"
                     initial={{ opacity: 0, x: -30 }}
                     animate={isInView ? { opacity: 1, x: 0 } : {}}
                     transition={{ delay: 0.5 + index * 0.1 }}
                     whileHover={{ x: 5 }}
                   >
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-aht-orange to-orange-500 flex items-center justify-center flex-shrink-0 shadow-lg">
-                      <ChevronRight className="w-5 h-5 text-white" />
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-gradient-to-br from-aht-orange to-orange-500 flex items-center justify-center flex-shrink-0 shadow-lg">
+                      <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                     </div>
                     <div>
-                      <div className="font-semibold text-foreground text-lg mb-1 group-hover:text-aht-orange transition-colors">
+                      <div className="font-semibold text-foreground text-base sm:text-lg mb-1 group-hover:text-aht-orange transition-colors">
                         {point.title}
                       </div>
-                      <div className="text-sm text-muted-foreground leading-relaxed">
+                      <div className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                         {point.description}
                       </div>
                     </div>
@@ -284,17 +284,17 @@ const VisionSection = () => {
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ delay: 0.6 }}
             >
-              <Card className="h-full relative overflow-hidden bg-gradient-to-br from-primary via-primary to-primary/90 text-white p-8 md:p-10">
+              <Card className="h-full relative overflow-hidden bg-gradient-to-br from-primary via-primary to-primary/90 text-white p-6 sm:p-8 md:p-10">
                 {/* Decorative elements */}
-                <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-aht-orange/30 to-transparent rounded-full blur-3xl" />
-                <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-white/10 to-transparent rounded-full blur-2xl" />
+                <div className="absolute top-0 right-0 w-48 sm:w-64 h-48 sm:h-64 bg-gradient-to-bl from-aht-orange/30 to-transparent rounded-full blur-3xl" />
+                <div className="absolute bottom-0 left-0 w-32 sm:w-48 h-32 sm:h-48 bg-gradient-to-tr from-white/10 to-transparent rounded-full blur-2xl" />
                 
                 <div className="relative z-10">
-                  <div className="flex items-center gap-3 mb-8">
-                    <div className="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center">
-                      <TrendingUp className="w-6 h-6 text-aht-orange" />
+                  <div className="flex items-center gap-3 mb-6 sm:mb-8">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center">
+                      <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-aht-orange" />
                     </div>
-                    <h3 className="text-2xl font-bold">Investment Opportunity</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold">Investment Opportunity</h3>
                   </div>
                   
                   <div className="space-y-4">
@@ -317,21 +317,21 @@ const VisionSection = () => {
           </motion.div>
           
           {/* Vision 2030 Card */}
-          <motion.div variants={itemVariants}>
+          <motion.div variants={itemVariants} className="px-2">
             <Card className="card-corporate relative overflow-hidden bg-gradient-to-r from-card via-card to-card border-primary/10">
               {/* Animated gradient border effect */}
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-aht-orange/20 via-primary/20 to-aht-orange/20 opacity-0 hover:opacity-100 transition-opacity duration-500 blur-xl" />
               
-              <div className="relative z-10 text-center py-6">
+              <div className="relative z-10 text-center py-4 sm:py-6">
                 <motion.div 
-                  className="inline-flex items-center gap-2 bg-aht-orange/10 border border-aht-orange/30 rounded-full px-5 py-2 mb-6"
+                  className="inline-flex items-center gap-2 bg-aht-orange/10 border border-aht-orange/30 rounded-full px-4 py-1.5 sm:px-5 sm:py-2 mb-4 sm:mb-6"
                   whileHover={{ scale: 1.05 }}
                 >
-                  <Eye className="w-5 h-5 text-aht-orange" />
-                  <span className="text-sm font-bold text-aht-orange uppercase tracking-wider">Our Vision</span>
+                  <Eye className="w-4 h-4 sm:w-5 sm:h-5 text-aht-orange" />
+                  <span className="text-xs sm:text-sm font-bold text-aht-orange uppercase tracking-wider">Our Vision</span>
                 </motion.div>
                 
-                <p className="text-xl md:text-2xl text-foreground leading-relaxed max-w-4xl mx-auto mb-10 font-medium">
+                <p className="text-base sm:text-xl md:text-2xl text-foreground leading-relaxed max-w-4xl mx-auto mb-8 sm:mb-10 font-medium px-2">
                   To be a <span className="text-aht-orange">global leader</span> in hypersonic ground-test technologies and shock-based material processing, 
                   enabling next-generation aerospace systems and <span className="text-aht-orange">advanced materials</span> through 
                   innovation and research excellence.
