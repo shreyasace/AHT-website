@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-import { GraduationCap, Award, Building2, Quote } from "lucide-react";
+import { GraduationCap, Award, Building2, Quote, Atom, Rocket, Zap, Sparkles } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
