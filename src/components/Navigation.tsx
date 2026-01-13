@@ -54,8 +54,8 @@ const Navigation = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        scrolled 
-          ? "bg-white/90 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] border-b border-white/20" 
+        scrolled || isOpen
+          ? "bg-white/95 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] border-b border-white/20" 
           : "bg-transparent"
       }`}
     >
@@ -82,10 +82,10 @@ const Navigation = () => {
               />
             </div>
             <div>
-              <div className={`font-bold text-xl transition-colors duration-300 ${scrolled ? 'text-primary' : 'text-white'}`}>
+              <div className={`font-bold text-xl transition-colors duration-300 ${(scrolled || isOpen) ? 'text-primary' : 'text-white'}`}>
                 AHT
               </div>
-              <div className={`text-xs transition-colors duration-300 ${scrolled ? 'text-muted-foreground' : 'text-white/70'}`}>
+              <div className={`text-xs transition-colors duration-300 ${(scrolled || isOpen) ? 'text-muted-foreground' : 'text-white/70'}`}>
                 Applied Hypersonic Technologies
               </div>
             </div>
@@ -125,7 +125,7 @@ const Navigation = () => {
 
           {/* Mobile menu button */}
           <motion.button
-            className={`md:hidden p-2 rounded-lg transition-colors ${scrolled ? 'hover:bg-muted' : 'hover:bg-white/10'}`}
+            className={`md:hidden p-2 rounded-lg transition-colors ${(scrolled || isOpen) ? 'hover:bg-muted' : 'hover:bg-white/10'}`}
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
             whileTap={{ scale: 0.9 }}
@@ -139,7 +139,7 @@ const Navigation = () => {
                   exit={{ rotate: 90, opacity: 0 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <X className={`h-6 w-6 ${scrolled ? 'text-foreground' : 'text-white'}`} />
+                  <X className={`h-6 w-6 ${(scrolled || isOpen) ? 'text-foreground' : 'text-white'}`} />
                 </motion.div>
               ) : (
                 <motion.div
@@ -149,7 +149,7 @@ const Navigation = () => {
                   exit={{ rotate: -90, opacity: 0 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <Menu className={`h-6 w-6 ${scrolled ? 'text-foreground' : 'text-white'}`} />
+                  <Menu className={`h-6 w-6 ${(scrolled || isOpen) ? 'text-foreground' : 'text-white'}`} />
                 </motion.div>
               )}
             </AnimatePresence>
