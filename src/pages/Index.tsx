@@ -5,10 +5,16 @@ import ResearchSection from "@/components/ResearchSection";
 import CompetitiveEdgeSection from "@/components/CompetitiveEdgeSection";
 import VisionSection from "@/components/VisionSection";
 import ContactSection from "@/components/ContactSection";
+import { motion } from "framer-motion";
 
 const Index = () => {
   return (
-    <main className="min-h-screen">
+    <motion.main 
+      className="min-h-screen overflow-x-hidden"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <Navigation />
       
       <section id="home">
@@ -34,7 +40,7 @@ const Index = () => {
       <section id="contact">
         <ContactSection />
       </section>
-    </main>
+    </motion.main>
   );
 };
 
