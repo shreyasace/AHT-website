@@ -3,7 +3,6 @@ import { Card } from "@/components/ui/card";
 import { GraduationCap, Award, Building2, Quote } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import drKavitha from "@/assets/dr-kavitha.png";
 
 // Infinite scrolling marquee
 const Marquee = () => {
@@ -103,7 +102,6 @@ const AboutSection = () => {
       initials: "KJ",
       name: "Dr. Kavitha Jayaram",
       role: "Co-Founder & Partner",
-      image: drKavitha,
       gradient: "from-aht-orange via-orange-500 to-primary",
       details: [
         { icon: GraduationCap, text: "PhD in Advanced Materials" },
@@ -172,18 +170,12 @@ const AboutSection = () => {
                     {/* Avatar */}
                     <div className="text-center mb-6 sm:mb-8">
                       <motion.div 
-                        className={`w-20 h-20 sm:w-28 sm:h-28 ${founder.image ? '' : `bg-gradient-to-br ${founder.gradient}`} rounded-2xl mx-auto mb-4 sm:mb-5 flex items-center justify-center text-white text-2xl sm:text-3xl font-bold shadow-xl relative overflow-hidden`}
+                        className={`w-20 h-20 sm:w-28 sm:h-28 bg-gradient-to-br ${founder.gradient} rounded-2xl mx-auto mb-4 sm:mb-5 flex items-center justify-center text-white text-2xl sm:text-3xl font-bold shadow-xl relative overflow-hidden`}
                         whileHover={{ scale: 1.05, rotate: 3 }}
                         transition={{ type: "spring", stiffness: 300 }}
                       >
-                        {founder.image ? (
-                          <img src={founder.image} alt={founder.name} className="w-full h-full object-cover" />
-                        ) : (
-                          <>
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                            <span className="relative z-10">{founder.initials}</span>
-                          </>
-                        )}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                        <span className="relative z-10">{founder.initials}</span>
                       </motion.div>
                       <h3 className="text-xl sm:text-2xl font-bold text-primary mb-1 sm:mb-2">{founder.name}</h3>
                       <p className="text-aht-orange font-semibold text-base sm:text-lg">{founder.role}</p>
