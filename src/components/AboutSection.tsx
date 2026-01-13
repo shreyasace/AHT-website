@@ -140,7 +140,6 @@ const AboutSection = () => {
               className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 mb-4 sm:mb-6"
               whileHover={{ scale: 1.05 }}
             >
-              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
               <span className="text-xs sm:text-sm font-semibold text-primary">Deep-Tech Engineering</span>
             </motion.div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4 sm:mb-6 tracking-tight">

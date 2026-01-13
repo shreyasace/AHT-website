@@ -159,7 +159,6 @@ const ResearchSection = () => {
               className="inline-flex items-center gap-2 bg-aht-orange/10 border border-aht-orange/30 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 mb-4 sm:mb-6"
               whileHover={{ scale: 1.05 }}
             >
-              <Beaker className="w-3 h-3 sm:w-4 sm:h-4 text-aht-orange" />
               <span className="text-xs sm:text-sm font-semibold text-aht-orange">Cutting-Edge R&D</span>
             </motion.div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4 sm:mb-6 tracking-tight">

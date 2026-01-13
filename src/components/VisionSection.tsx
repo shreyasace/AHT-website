@@ -192,7 +192,6 @@ const VisionSection = () => {
               className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 mb-4 sm:mb-6"
               whileHover={{ scale: 1.05 }}
             >
-              <Eye className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
               <span className="text-xs sm:text-sm font-semibold text-primary">Our Vision</span>
             </motion.div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4 sm:mb-6 tracking-tight">
@@ -248,8 +247,7 @@ const VisionSection = () => {
           <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-stretch mb-12 md:mb-16 px-2">
             {/* Left column - Strategic points */}
             <div className="flex flex-col justify-center">
-              <h3 className="text-2xl sm:text-3xl font-bold text-primary mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
-                <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 text-aht-orange" />
+              <h3 className="text-2xl sm:text-3xl font-bold text-primary mb-6 sm:mb-8">
                 Strategic Global Priority
               </h3>
               <div className="space-y-4 sm:space-y-6">
@@ -327,7 +325,6 @@ const VisionSection = () => {
                   className="inline-flex items-center gap-2 bg-aht-orange/10 border border-aht-orange/30 rounded-full px-4 py-1.5 sm:px-5 sm:py-2 mb-4 sm:mb-6"
                   whileHover={{ scale: 1.05 }}
                 >
-                  <Eye className="w-4 h-4 sm:w-5 sm:h-5 text-aht-orange" />
                   <span className="text-xs sm:text-sm font-bold text-aht-orange uppercase tracking-wider">Our Vision</span>
                 </motion.div>
                 
