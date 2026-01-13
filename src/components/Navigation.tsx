@@ -67,20 +67,13 @@ const Navigation = () => {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            <div className="relative">
-              <motion.img 
-                src={ahtLogo} 
-                alt="AHT Logo" 
-                className="w-12 h-12 rounded-xl shadow-lg"
-                whileHover={{ rotate: 5 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              />
-              <motion.div 
-                className="absolute -bottom-1 -right-1 w-4 h-4 bg-gradient-to-br from-aht-orange to-orange-500 rounded-full"
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              />
-            </div>
+            <motion.img 
+              src={ahtLogo} 
+              alt="AHT Logo" 
+              className="w-12 h-12 rounded-xl shadow-lg"
+              whileHover={{ rotate: 5 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            />
             <div>
               <div className={`font-bold text-xl transition-colors duration-300 ${(scrolled || isOpen) ? 'text-primary' : 'text-white'}`}>
                 AHT
